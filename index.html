@@ -8,16 +8,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Ultra&display=swap" rel="stylesheet">
 </head>
 <body>
-    <audio id="bg-music" loop>
-        <source src="ressources/frog.mp3" type="audio/mpeg">
-      </audio>
       
-      <script>
-        document.addEventListener('click', function () {
-          const audio = document.getElementById('bg-music');
-          audio.play();
-        }, { once: true });
-      </script>
+  <audio id="myAudio" src="ressources/frog.mp3"></audio>
+
+  <script>
+
+    const audio = document.getElementById('myAudio');
+    let isPlaying = false;
+
+    document.body.addEventListener('click', () => {
+      if (!isPlaying) {
+        audio.play();
+      } else {
+        audio.pause();
+        audio.currentTime = 0; 
+      }
+      isPlaying = !isPlaying;
+    });
+
+  </script>
 
         <h1> SAVE PIPOU !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</h1>
         <img id='pipou1' src="ressources/pipou.png" class="floating rotating" />
@@ -29,6 +38,6 @@
         <img id='pipou7' src="ressources/pipou.png" class="floating rotating" />
         <img id='pipou8' src="ressources/pipou.png" class="floating rotating" />
         <img id='pipou9' src="ressources/pipou.png" class="floating rotating" />
-        <iframe id="youtube" width="560" height="315" src="https://www.youtube.com/embed/w8HErNveaOU?si=o8xupLK-7GMh9_uh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe id='youtube' width="560" height="315" src="https://www.youtube.com/embed/Wz3Ao3G7_jw?si=x-ZEm9QUkeISkBbf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </body>
 </html>
